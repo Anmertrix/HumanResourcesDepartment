@@ -5,29 +5,35 @@ package HumanResourcesDepartment;
  */
 
 
-import java.text.Collator;
 import java.text.DateFormat;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.Collator;
 import java.util.Date;
 import java.util.Locale;
 
 public class Student implements Comparable {
 
-    // поле ИД СТУДЕНТА
-    private int studentId;
-    // поле ИМЯ
-    private String firstName;
-    // поле ФАМИЛИЯ
-    private String surName;
-    // поле ОТЧЕСТВО
-    private String patronymic;
-    // поле ДАТА РОЖДЕНИЯ
-    private Date dateOfBirth;
-    // поле ПОЛ
-    private char sex;
-    // поле ИД ГРУППЫ
-    private int groupId;
-    // поле ГОД ОБУЧЕНИЯ
-    private int educationYear;
+
+    private int studentId;      // поле ИД СТУДЕНТА
+    private String firstName;   // поле ИМЯ
+    private String surName;     // поле ФАМИЛИЯ
+    private String patronymic;  // поле ОТЧЕСТВО
+    private Date dateOfBirth;   // поле ДАТА РОЖДЕНИЯ
+    private char sex;           // поле ПОЛ
+    private int groupId;        // поле ИД ГРУППЫ
+    private int educationYear;  // поле ГОД ОБУЧЕНИЯ
+
+    public Student(ResultSet rs) throws SQLException {
+        setStudentId(rs.getInt(1));
+        setFirstName(rs.getString(2));
+        setPatronymic(rs.getString(3));
+        setSurName(rs.getString(4));
+        setSex(rs.getString(5).charAt(0));
+        setDateOfBirth(rs.getDate(6));
+        setGroupId(rs.getInt(7));
+        setEducationYear(rs.getInt(8));
+    }
 
     // get/set для ДАТА РОЖДЕНИЯ
     public Date getDateOfBirth() {

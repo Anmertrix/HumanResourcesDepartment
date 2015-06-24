@@ -5,14 +5,10 @@ package HumanResourcesDepartment;
  */
 public class Group {
 
-    // поле ИД ГРУППЫ
-    private int groupId;
-    // поле ИМЯ ГРУППЫ
-    private String nameGroup;
-    // поле КУРАТОР
-    private String curator;
-    // поле СПЕЦИАЛЬНОСТЬ
-    private String speciality;
+    private int groupId;       // поле ИД ГРУППЫ
+    private String nameGroup;  // поле ИМЯ ГРУППЫ
+    private String curator;     // поле КУРАТОР
+    private String speciality;  // поле СПЕЦИАЛЬНОСТЬ
 
     // get/set для КУРАТОР
     public String getCurator() {
