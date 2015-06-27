@@ -35,6 +35,9 @@ public class Student implements Comparable {
         setEducationYear(rs.getInt(8));
     }
 
+    public Student() {
+    }
+
     // get/set для ДАТА РОЖДЕНИЯ
     public Date getDateOfBirth() {
         return dateOfBirth;
